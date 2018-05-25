@@ -28,6 +28,9 @@ public class Student {
     @JoinColumn(name = "address_id")
     private Address address;
 
+    @ManyToOne
+    private Klass klass;
+
     @ElementCollection
     @CollectionTable(name = "Phone")
     private List<String> phoneNumbers;
@@ -99,6 +102,14 @@ public class Student {
 
     public void setPhoneNumbers(List<String> phoneNumbers) {
         this.phoneNumbers = phoneNumbers;
+    }
+
+    public Klass getKlass() {
+        return klass;
+    }
+
+    public void setKlass(Klass klass) {
+        this.klass = klass;
     }
 
     @Override
