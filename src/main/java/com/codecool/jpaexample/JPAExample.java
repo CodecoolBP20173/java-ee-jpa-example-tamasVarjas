@@ -26,7 +26,7 @@ public class JPAExample {
             e.printStackTrace();
         }
 
-        Klass classBp2 = new Klass("Budapest 2016-2");
+        Klass classBp2 = new Klass("Budapest 2016-2", CCLocation.BUDAPEST);
         Address address = new Address("Hungary", "1234", "Budapest", "Macskakő út 5.");
         String phoneNumHome = "123456789";
         String phoneNumMobile = "123789456";
@@ -89,6 +89,7 @@ public class JPAExample {
         Klass foundKlass = em.find(Klass.class, 1L);
         System.out.println("--Found class #1");
         System.out.println("----name----" + foundKlass.getName());
+        System.out.println("----location----" + foundKlass.getLocation());
         System.out.println("----students----" + foundKlass.getStudents());
 
         em.close();
